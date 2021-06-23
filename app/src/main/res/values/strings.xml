@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Chain Oiler</string>
+    <string name="weather">Weather</string>
+    <string name="dryHot">Dry Hot</string>
+    <string name="dryCold">Dry cold</string>
+    <string name="wetHot">Wet hot</string>
+    <string name="wetCold">Wet cold</string>
+    <string name="edit">Edit</string>
+    <string name="drop_by_min">Drop/min :</string>
+    <string name="temp">"T° : "</string>
+    <string name="humidity">Humidity :</string>
+    <string name="auto">Auto</string>
+</resources>

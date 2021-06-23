@@ -1,0 +1,2 @@
+rootProject.name = "Chain Oiler"
+include ':app'
