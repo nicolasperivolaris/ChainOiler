@@ -7,7 +7,12 @@
     <string name="wetCold">Wet cold</string>
     <string name="edit">Edit</string>
     <string name="drop_by_min">Drop/min :</string>
-    <string name="temp">"T° : "</string>
+    <string name="temp">T° :</string>
     <string name="humidity">Humidity :</string>
     <string name="auto">Auto</string>
+    <string name="spray">Spray</string>
+    <string name="_1_drop">1-Drop</string>
+    <string name="pump_on">Pump on</string>
+    <string name="lock">Lock</string>
+    <string name="unlock">Unlock</string>
 </resources>

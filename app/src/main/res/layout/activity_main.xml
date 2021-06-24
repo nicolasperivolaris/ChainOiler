@@ -8,81 +8,75 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+
+        <RadioGroup
+            android:id="@+id/modeRG"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
-            <RadioGroup
+            <TextView
+                android:id="@+id/rBGroupWeather"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:text="@string/weather"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                <TextView
-                    android:id="@+id/rBGroupWeather"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/weather"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <RadioButton
+                android:id="@+id/dryHotRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dryHot" />
 
-                <RadioButton
-                    android:id="@+id/dryHotRB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dryHot" />
+            <RadioButton
+                android:id="@+id/dryColdRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dryCold" />
 
-                <RadioButton
-                    android:id="@+id/dryColdRB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dryCold" />
+            <RadioButton
+                android:id="@+id/wetHotRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/wetHot" />
 
-                <RadioButton
-                    android:id="@+id/wetHotRB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/wetHot" />
+            <RadioButton
+                android:id="@+id/wetColdRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/wetCold" />
 
-                <RadioButton
-                    android:id="@+id/wetColdRB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/wetCold" />
+            <RadioButton
+                android:id="@+id/auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/auto" />
 
-                <RadioButton
-                    android:id="@+id/auto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/auto" />
-
-            </RadioGroup>
-
-        </LinearLayout>
+        </RadioGroup>
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/EditSw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/edit" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+            android:layout_gravity="center"
+            android:gravity="start|center_vertical"
+            android:onClick="onModeEdit"
+            android:text="@string/edit"
+            tools:ignore="OnClick" />
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:paddingTop="2dp">
 
                     <TextView
                         android:id="@+id/dropByMinTV"
@@ -90,19 +84,17 @@
                         android:layout_height="wrap_content"
                         android:text="@string/drop_by_min" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/dropByMinET"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:clickable="false"
-                        android:enabled="false"
-                        android:inputType="none"
-                        android:labelFor="@id/dropByMinTV" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
+
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:paddingTop="2dp">
 
                     <TextView
                         android:id="@+id/tempTV"
@@ -110,20 +102,17 @@
                         android:layout_height="wrap_content"
                         android:text="@string/temp" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/tempET"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:clickable="false"
-                        android:ems="10"
-                        android:enabled="false"
-                        android:inputType="none" />
+                        android:layout_height="wrap_content" />
 
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:paddingTop="2dp">
 
                     <TextView
                         android:id="@+id/textView3"
@@ -131,18 +120,61 @@
                         android:layout_height="wrap_content"
                         android:text="@string/humidity" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/humidityET"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:clickable="false"
-                        android:ems="10"
-                        android:enabled="false"
-                        android:inputType="none" />
+                        android:layout_height="wrap_content" />
                 </TableRow>
             </TableLayout>
 
-        </LinearLayout>
+        <TableLayout
+            android:id="@+id/buttonsTL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:onClick="onModeEdit">
+
+                <Button
+                    android:id="@+id/sprayBt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/spray" />
+
+                <Button
+                    android:id="@+id/drop1Bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_1_drop" />
+
+                <Button
+                    android:id="@+id/continuousBt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pump_on" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/lockBt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onUnlock"
+                    android:text="@string/lock" />
+            </TableRow>
+
+        </TableLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
