@@ -19,7 +19,8 @@
         <RadioGroup
             android:id="@+id/modeRG"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:onClick="onModeChange">
 
             <TextView
                 android:id="@+id/rBGroupWeather"
@@ -29,28 +30,28 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <RadioButton
-                android:id="@+id/dryHotRB"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dryHot" />
-
-            <RadioButton
                 android:id="@+id/dryColdRB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/dryCold" />
 
             <RadioButton
-                android:id="@+id/wetHotRB"
+                android:id="@+id/dryHotRB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/wetHot" />
+                android:text="@string/dryHot" />
 
             <RadioButton
                 android:id="@+id/wetColdRB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/wetCold" />
+
+            <RadioButton
+                android:id="@+id/wetHotRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/wetHot" />
 
             <RadioButton
                 android:id="@+id/auto"
@@ -82,7 +83,7 @@
                         android:id="@+id/dropByMinTV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/drop_by_min" />
+                        android:text="@string/secondsDrop" />
 
                     <TextView
                         android:id="@+id/dropByMinET"
@@ -138,26 +139,33 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:onClick="onModeEdit">
+                android:gravity="center">
 
-                <Button
-                    android:id="@+id/sprayBt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/spray" />
+                <RadioGroup
+                    android:id="@+id/actionsGroup"
+                    android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/drop1Bt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/_1_drop" />
+                    <RadioButton
+                        android:id="@+id/sprayBt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onAction"
+                        android:text="@string/spray" />
 
-                <Button
-                    android:id="@+id/continuousBt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/pump_on" />
+                    <RadioButton
+                        android:id="@+id/drop1Bt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onAction"
+                        android:text="@string/_1_drop" />
+
+                    <RadioButton
+                        android:id="@+id/continuousBt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onAction"
+                        android:text="@string/pump_on" />
+                </RadioGroup>
             </TableRow>
 
             <TableRow

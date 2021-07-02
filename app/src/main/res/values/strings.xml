@@ -6,7 +6,7 @@
     <string name="wetHot">Wet hot</string>
     <string name="wetCold">Wet cold</string>
     <string name="edit">Edit</string>
-    <string name="drop_by_min">Drop/min :</string>
+    <string name="secondsDrop">Seconds/Drop :</string>
     <string name="temp">T° :</string>
     <string name="humidity">Humidity :</string>
     <string name="auto">Auto</string>
